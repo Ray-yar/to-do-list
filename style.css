@@ -69,3 +69,29 @@ li:hover {
     background-color: #f0f0f0;
 }
 
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.delete-btn,
+.edit-btn {
+    flex: 1; /* Make buttons take equal width */
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    margin-right: 5px;
+}
+
+.edit-btn {
+    background-color: #3498db;
+    color: #fff;
+    margin-left: 5px;
+}
