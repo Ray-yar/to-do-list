@@ -1,6 +1,18 @@
 const taskInput = document.getElementById('taskInput');
 const taskList = document.getElementById('taskList');
 
+// Load tasks from local storage
+document.addEventListener('DOMContentLoaded', loadTasks);
+
+// Function to load tasks from local storage
+function loadTasks() {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+    tasks.forEach(task => {
+        addTaskToDOM(task);
+    });
+}
+
 // Function to add a new task
 function addTask() {
     const taskText = taskInput.value.trim();
