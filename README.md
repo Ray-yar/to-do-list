@@ -5,7 +5,7 @@ The To-Do List App is a simple and intuitive task management tool designed to he
 
 <a href="https://ray-yar.github.io/to-do-list/" target="_blank">Visit the live project here</a>
 
-![Todo List MockUp](.docs/responsive.png)
+![Todo List MockUp](.docs/responsive.PNG)
 
 ## Features
 ---
