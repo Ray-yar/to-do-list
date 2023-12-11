@@ -58,6 +58,48 @@ function addTaskToDOM(task) {
     taskList.appendChild(li);
 }
 
+// Function to delete a task
+function deleteTask(taskText) {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const updatedTasks = tasks.filter(task => task.text !== taskText);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+
+    // Remove the task from the DOM
+    const taskElements = document.querySelectorAll('li');
+
+    taskElements.forEach(taskElement => {
+        if (taskElement.textContent.includes(taskText)) {
+            taskElement.remove();
+        }
+    });
+}
+
+// Function to edit a task
+function editTask(taskText) {
+    const newTaskText = prompt('Edit task:', taskText);
+
+    if (newTaskText !== null) {
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        const updatedTasks = tasks.map(task => {
+            if (task.text === taskText) {
+                task.text = newTaskText;
+            }
+            return task;
+        });
+
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+
+        // Update the task in the DOM
+        const taskElements = document.querySelectorAll('li');
+
+        taskElements.forEach(taskElement => {
+            if (taskElement.textContent.includes(taskText)) {
+                taskElement.querySelector('span').textContent = newTaskText;
+            }
+        });
+    }
+}
+
 // Function to save tasks to local storage
 function saveTasksToLocalStorage() {
     const tasks = Array.from(document.querySelectorAll('li')).map(li => {
