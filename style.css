@@ -24,6 +24,7 @@ body {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     text-align: center;
+    /* Center-align the header content */
 }
 
 h1 {
@@ -61,24 +62,18 @@ li {
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    display: flex;
-    flex-direction: column; /* Align buttons vertically */
+    /* Ensure the buttons don't overlap with the content */
 }
 
 li:hover {
     background-color: #f0f0f0;
 }
 
-.buttons-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
 .delete-btn,
 .edit-btn {
-    flex: 1; /* Make buttons take equal width */
+    width: 100%;
     padding: 8px;
+    margin-top: 5px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -87,11 +82,9 @@ li:hover {
 .delete-btn {
     background-color: #e74c3c;
     color: #fff;
-    margin-right: 5px;
 }
 
 .edit-btn {
     background-color: #3498db;
     color: #fff;
-    margin-left: 5px;
 }
